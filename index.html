@@ -8,45 +8,7 @@
     <title>京东金融</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script>
-        $(function() {
-            $(".navMainBox").children().eq(0).children().children("a").hover(function() {
-                $(this).siblings(".pulldown").css("display", "block");
-            }, function() {
-                $(this).siblings(".pulldown").css("display", "none");
-            });
-            $(".pulldown").hover(function() {
-                $(this).css("display", "block");
-            }, function() {
-                $(this).css("display", "none");
-            });
-            $(".topBanner a span").on("click", function() {
-                $(".topBanner").css("display", "none");
-            });
-            $(window).on("scroll", function() {
-                var scrTop = $(window).scrollTop();
-                if ($(window).scrollTop() > 700 && $(window).scrollTop() < 2100) {
-                    $(".tab2Bg").css("background-position", "0 " + (-(scrTop - 700) / 4) + "px");
-                }
-                if (scrTop > 200) {
-                    if ($(".topBarFixed").length == 0) {
-                        $(".navMain").clone().addClass("topBarFixed").css({
-                            "background": "#fff",
-                            "position": "fixed",
-                            "top": 0,
-                            "z-index": "999",
-                            "width": "100%",
-                            "height": "55px",
-                            "overflow": "hidden"
-                        }).appendTo($("header"));
-                    }
-                } else {
-                    $(".topBarFixed").remove();
-                }
-            });
-        });
-    </script>
+
 </head>
 
 <body>
@@ -922,5 +884,44 @@
         </div>
     </footer>
 </body>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function() {
+        $(".navMainBox").children().eq(0).children().children("a").hover(function() {
+            $(this).siblings(".pulldown").css("display", "block");
+        }, function() {
+            $(this).siblings(".pulldown").css("display", "none");
+        });
+        $(".pulldown").hover(function() {
+            $(this).css("display", "block");
+        }, function() {
+            $(this).css("display", "none");
+        });
+        $(".topBanner a span").on("click", function() {
+            $(".topBanner").css("display", "none");
+        });
+        $(window).on("scroll", function() {
+            var scrTop = $(window).scrollTop();
+            if ($(window).scrollTop() > 700 && $(window).scrollTop() < 2100) {
+                $(".tab2Bg").css("background-position", "0 " + (-(scrTop - 700) / 4) + "px");
+            }
+            if (scrTop > 200) {
+                if ($(".topBarFixed").length == 0) {
+                    $(".navMain").clone().addClass("topBarFixed").css({
+                        "background": "#fff",
+                        "position": "fixed",
+                        "top": 0,
+                        "z-index": "999",
+                        "width": "100%",
+                        "height": "55px",
+                        "overflow": "hidden"
+                    }).appendTo($("header"));
+                }
+            } else {
+                $(".topBarFixed").remove();
+            }
+        });
+    });
+</script>
 
 </html>

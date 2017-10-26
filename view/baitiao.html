@@ -11,21 +11,7 @@
     <link rel="stylesheet" href="../css/baitiao.css">
     <script src="../js/jquery-3.2.1.js"></script>
     <title>白条</title>
-    <script src="../js/bootstrap.min.js"></script>
-    <script>
-        $(function() {
-            $(".navMainBox").children().eq(0).children().children("a").hover(function() {
-                $(this).siblings(".pulldown").css("display", "block");
-            }, function() {
-                $(this).siblings(".pulldown").css("display", "none");
-            });
-            $(".pulldown").hover(function() {
-                $(this).css("display", "block");
-            }, function() {
-                $(this).css("display", "none");
-            });
-        });
-    </script>
+
 </head>
 
 <body>
@@ -724,5 +710,20 @@
         </div>
     </footer>
 </body>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+    $(function() {
+        $(".navMainBox").children().eq(0).children().children("a").hover(function() {
+            $(this).siblings(".pulldown").css("display", "block");
+        }, function() {
+            $(this).siblings(".pulldown").css("display", "none");
+        });
+        $(".pulldown").hover(function() {
+            $(this).css("display", "block");
+        }, function() {
+            $(this).css("display", "none");
+        });
+    });
+</script>
 
 </html>

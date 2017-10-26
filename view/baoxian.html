@@ -9,22 +9,7 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/baoxian.css">
     <title>保险</title>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery-3.2.1.js"></script>
-    <script>
-        $(function() {
-            $(".navMainBox").children().eq(0).children().children("a").hover(function() {
-                $(this).siblings(".pulldown").css("display", "block");
-            }, function() {
-                $(this).siblings(".pulldown").css("display", "none");
-            });
-            $(".pulldown").hover(function() {
-                $(this).css("display", "block");
-            }, function() {
-                $(this).css("display", "none");
-            });
-        });
-    </script>
+
 
 </head>
 
@@ -811,5 +796,21 @@
         // 在文件一开始
     </script>
 </body>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery-3.2.1.js"></script>
+<script>
+    $(function() {
+        $(".navMainBox").children().eq(0).children().children("a").hover(function() {
+            $(this).siblings(".pulldown").css("display", "block");
+        }, function() {
+            $(this).siblings(".pulldown").css("display", "none");
+        });
+        $(".pulldown").hover(function() {
+            $(this).css("display", "block");
+        }, function() {
+            $(this).css("display", "none");
+        });
+    });
+</script>
 
 </html>

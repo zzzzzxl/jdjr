@@ -8,39 +8,7 @@
     <title>京东理财频道-首页·</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/licai.css">
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script>
-        $(function() {
-            $(".navMainBox").children().eq(0).children().children("a").hover(function() {
-                $(this).siblings(".pulldown").css("display", "block");
-            }, function() {
-                $(this).siblings(".pulldown").css("display", "none");
-            });
-            $(".pulldown").hover(function() {
-                $(this).css("display", "block");
-            }, function() {
-                $(this).css("display", "none");
-            });
-            $(window).on("scroll", function() {
-                var scrTop = $(window).scrollTop();
-                if (scrTop > 200) {
-                    if ($(".topBarFixed").length == 0) {
-                        $(".navMain").clone().addClass("topBarFixed").css({
-                            "background": "#fff",
-                            "position": "fixed",
-                            "top": 0,
-                            "z-index": "999",
-                            "width": "100%",
-                            "height": "55px",
-                            "overflow": "hidden"
-                        }).appendTo($("header"));
-                    }
-                } else {
-                    $(".topBarFixed").remove();
-                }
-            });
-        })
-    </script>
+
 </head>
 
 <body>
@@ -747,5 +715,38 @@
 </body>
 
 
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function() {
+        $(".navMainBox").children().eq(0).children().children("a").hover(function() {
+            $(this).siblings(".pulldown").css("display", "block");
+        }, function() {
+            $(this).siblings(".pulldown").css("display", "none");
+        });
+        $(".pulldown").hover(function() {
+            $(this).css("display", "block");
+        }, function() {
+            $(this).css("display", "none");
+        });
+        $(window).on("scroll", function() {
+            var scrTop = $(window).scrollTop();
+            if (scrTop > 200) {
+                if ($(".topBarFixed").length == 0) {
+                    $(".navMain").clone().addClass("topBarFixed").css({
+                        "background": "#fff",
+                        "position": "fixed",
+                        "top": 0,
+                        "z-index": "999",
+                        "width": "100%",
+                        "height": "55px",
+                        "overflow": "hidden"
+                    }).appendTo($("header"));
+                }
+            } else {
+                $(".topBarFixed").remove();
+            }
+        });
+    })
+</script>
 
 </html>
