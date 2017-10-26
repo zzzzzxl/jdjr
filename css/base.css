@@ -30,6 +30,9 @@ ul {
 a {
   text-decoration: none;
 }
+a:hover {
+  text-decoration: none;
+}
 .fl {
   float: left;
 }
@@ -166,23 +169,40 @@ header .navMain .navMainBar .navMainBox > ul > li {
   height: 38px;
   line-height: 38px;
   text-align: center;
-  transition: all 0.6s;
+}
+header .navMain .navMainBar .navMainBox > ul > li:nth-child(6),
+header .navMain .navMainBar .navMainBox > ul > li:nth-child(8) {
+  width: 76px;
+}
+header .navMain .navMainBar .navMainBox > ul > li:nth-child(6) a,
+header .navMain .navMainBar .navMainBox > ul > li:nth-child(8) a {
+  margin: 0 5px;
 }
 header .navMain .navMainBar .navMainBox > ul > li.current {
   font-weight: 700;
   color: #ff5256;
   background: url(../img/diandian.png) no-repeat 5px 15px;
 }
+header .navMain .navMainBar .navMainBox > ul > li.current:nth-child(6),
+header .navMain .navMainBar .navMainBox > ul > li.current:nth-child(8) {
+  width: 76px;
+  background: url(../img/diandian.png) no-repeat 0px 15px;
+}
 header .navMain .navMainBar .navMainBox > ul > li.current a {
   color: #ff5256;
 }
+header .navMain .navMainBar .navMainBox > ul > li:not(:nth-child(1)):hover {
+  background: none;
+}
 header .navMain .navMainBar .navMainBox > ul > li:not(:nth-child(1)):hover > a {
   position: absolute;
-  z-index: 200;
+  z-index: 202;
   height: 35px;
   background-color: #fff;
   color: #323232;
   font-weight: 700;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
 }
 header .navMain .navMainBar .navMainBox > ul > li > a {
   width: 66px;
@@ -345,6 +365,69 @@ header .navMain .navMainBar .users .usersBox .usersArrowPic {
   width: 5px;
   height: 9px;
   background-position: 0 -104px;
+}
+header .navMain.topBarFixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  min-width: 1200px;
+  height: 51px;
+  background: #fff;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s;
+}
+header .navMain.topBarFixed .navMainBar {
+  margin: 0 auto;
+  width: 1200px;
+  height: 50px;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff url(../img/logo-small.png) no-repeat 0 5px;
+}
+header .navMain.topBarFixed .navMainBar .logo {
+  height: 50px;
+  visibility: hidden;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox {
+  margin-top: 11px;
+  font-size: 14px;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li {
+  height: 28px;
+  line-height: 28px;
+  width: 66px;
+  margin-right: 2px;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li.current {
+  font-weight: 700;
+  color: #ff5256;
+  background: url(../img/diandian.png) no-repeat 5px 12px;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li.current > a {
+  color: #ff5256;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li > a {
+  color: #5e5e5e;
+  font-size: 14px;
+  line-height: 28px;
+  height: 28px;
+  z-index: 201;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li > a:hover {
+  color: #5e5e5e;
+}
+header .navMain.topBarFixed .navMainBar .navMainBox > ul > li .pulldown {
+  top: 48px;
+  z-index: 201;
+}
+header .navMain.topBarFixed .searchBar {
+  margin-top: 7px;
+}
+header .navMain.topBarFixed .users {
+  padding-top: 7px;
+}
+header .navMain.topBarFixed .users .usersBox a {
+  color: #5e5e5e!important;
 }
 header .subNav {
   position: relative;
