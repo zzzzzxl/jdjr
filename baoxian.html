@@ -393,10 +393,37 @@
                 <a href="" id="slide5" style="background:url(./img/59ddebf1Ned04e960.jpg) center center no-repeat;display:none;"></a>
                 <a href="" id="slide6" style="background:url(./img/59dec158N4001edcc.jpg) center center no-repeat;display:none;"></a>
                 <a href="" id="slide7" style="background:url(./img/59e09f94Nfbdd0cd8.jpg) center center no-repeat;display:none;"></a>
-                <div class="content">
-                    <div class="left"><img src="./img/2017-10-25_172941.jpg" alt=""></div>
+
+                <!--修改过的地方  -->
+                <div class="content1">
+                    <!-- <div class="left"><img src="../img/2017-10-25_172941.jpg" alt=""></div> -->
+                    <div class="left">
+                        <div class="jdbaoxian hover-toon"></div>
+                        <P>关爱全家&nbsp;保险护航</P>
+                        <div class="middle-part">
+                            <div class="slide-l">
+                                <div class="user-logo">
+                                    <img src="./img/user-logo.jpg" alt="">
+                                    <span></span>
+                                </div>
+                                <div class="btn-bg">
+                                    <p>登录查看保单></p>
+                                </div>
+                            </div>
+                            <div class="slide-r">
+                                <span><img src="./img/56a5c0b5N0e887b2a.jpg" style="margin:0 auto;" alt=""></span>
+                                <p>'京小保'保险服务更周到</p>
+                            </div>
+                        </div>
+                        <div class="hoverma">
+                            <div class="weixinma">扫码关注保险官方微信</div>
+                        </div>
+                        <p></p>
+                    </div>
                     <div class="right"><img src="./img/2017-10-25_173017.jpg" alt=""></div>
                 </div>
+
+                <!--修改结束  （底部加了 jQuery 的代码）-->
             </div>
         </div>
         <!-- 轮播大背景结束 -->
@@ -813,6 +840,19 @@
             }
         });
     });
+</script>
+
+<!-- 轮播左侧tap -->
+<script>
+    $(".hoverma").hover(function() {
+        $(".middle-part").animate({
+            left: "-280px"
+        })
+    }, function() {
+        $(".middle-part").animate({
+            left: 0
+        })
+    })
 </script>
 
 </html>
