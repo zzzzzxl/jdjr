@@ -549,6 +549,7 @@ footer .footerBox .footerRightBar dd:nth-child(4) a {
   background-position-x: 0px;
 }
 .sideBar li a.sidep2 {
+  display: none;
   background-position-x: -42px;
 }
 .sideBar li a.sidep3 {

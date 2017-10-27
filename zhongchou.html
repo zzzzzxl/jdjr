@@ -1036,71 +1036,71 @@
             </div>
         </div>
     </footer>
-</body>
-
-<script src="./js/jquery-3.2.1.min.js"></script>
-<script>
-    $(function() {
-        function navMainTab() {
-            $(".navMainBox").children("ul").children("li").children("a").hover(function() {
-                $(this).siblings(".pulldown").css("display", "block");
-            }, function() {
-                $(this).siblings(".pulldown").css("display", "none");
-            });
-            $(".pulldown").hover(function() {
-                $(this).css("display", "block");
-            }, function() {
-                $(this).css("display", "none");
-            });
-        }
-        navMainTab();
-        $(window).on("scroll", function() {
-            var scrTop = $(window).scrollTop();
-            if (scrTop > 200) {
-                if ($(".topBarFixed").length == 0) {
-                    $(".navMain").clone().addClass("topBarFixed").appendTo($("header"));
-                    navMainTab();
-                }
-            } else {
-                $(".topBarFixed").remove();
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function() {
+            function navMainTab() {
+                $(".navMainBox").children("ul").children("li").children("a").hover(function() {
+                    $(this).siblings(".pulldown").css("display", "block");
+                }, function() {
+                    $(this).siblings(".pulldown").css("display", "none");
+                });
+                $(".pulldown").hover(function() {
+                    $(this).css("display", "block");
+                }, function() {
+                    $(this).css("display", "none");
+                });
             }
-        });
-        (function() {
-            var _index = 0;
-            var slider = null;
-            var sliderStart = function() {
-                slider = setInterval(function() {
-                    _index = _index < 3 ? ++_index : _index = 0;
-                    $(".sliderBox div a").css("transform", "translateX(-" + _index + "00%)");
+            navMainTab();
+            $(window).on("scroll", function() {
+                var scrTop = $(window).scrollTop();
+                if (scrTop > 200) {
+                    if ($(".topBarFixed").length == 0) {
+                        $(".navMain").clone().addClass("topBarFixed").appendTo($("header"));
+                        navMainTab();
+                    }
+                } else {
+                    $(".topBarFixed").remove();
+                }
+            });
+            (function() {
+                var _index = 0;
+                var slider = null;
+                var sliderStart = function() {
+                    slider = setInterval(function() {
+                        _index = _index < 3 ? ++_index : _index = 0;
+                        $(".sliderBox div a").css("transform", "translateX(-" + _index + "00%)");
+                        $(".sliderList ul").children().eq(_index).addClass("active").siblings().removeClass("active");
+                        $(".bodyBg").css("background-image", "url(./img/zhongchou-slidebg" + (_index + 1) + ".jpg)");
+                    }, 5000);
+                };
+                sliderStart();
+                $(".slider>span").on("click", function() {
+                    clearInterval(slider);
+                    if ($(".slider span").index($(this))) {
+                        $(this).siblings(".sliderBox").children("div").children("a").css("transform", "translateX(-" + (_index < 3 ? ++_index : _index = 0) + "00%)");
+                    } else {
+                        $(this).siblings(".sliderBox").children("div").children("a").css("transform", "translateX(-" + (_index > 0 ? --_index : _index = 3) + "00%)");
+                    }
                     $(".sliderList ul").children().eq(_index).addClass("active").siblings().removeClass("active");
                     $(".bodyBg").css("background-image", "url(./img/zhongchou-slidebg" + (_index + 1) + ".jpg)");
-                }, 5000);
-            };
-            sliderStart();
-            $(".slider>span").on("click", function() {
-                clearInterval(slider);
-                if ($(".slider span").index($(this))) {
-                    $(this).siblings(".sliderBox").children("div").children("a").css("transform", "translateX(-" + (_index < 3 ? ++_index : _index = 0) + "00%)");
-                } else {
-                    $(this).siblings(".sliderBox").children("div").children("a").css("transform", "translateX(-" + (_index > 0 ? --_index : _index = 3) + "00%)");
-                }
-                $(".sliderList ul").children().eq(_index).addClass("active").siblings().removeClass("active");
-                $(".bodyBg").css("background-image", "url(./img/zhongchou-slidebg" + (_index + 1) + ".jpg)");
-            });
-            $(".slider").hover(function() {
-                clearInterval(slider);
-            }, function() {
-                clearInterval(slider);
-                sliderStart();
-            });
-            $(".sliderList ul li").on("click", function() {
-                _index = $(".sliderList ul li").index($(this));
-                $(this).addClass("active").siblings().removeClass("active")
-                $(".sliderBox div a").css("transform", "translateX(-" + _index + "00%)");
-                $(".bodyBg").css("background-image", "url(../img/zhongchou-slidebg" + (_index + 1) + ".jpg)");
-            })
-        })()
-    })
-</script>
+                });
+                $(".slider").hover(function() {
+                    clearInterval(slider);
+                }, function() {
+                    clearInterval(slider);
+                    sliderStart();
+                });
+                $(".sliderList ul li").on("click", function() {
+                    _index = $(".sliderList ul li").index($(this));
+                    $(this).addClass("active").siblings().removeClass("active")
+                    $(".sliderBox div a").css("transform", "translateX(-" + _index + "00%)");
+                    $(".bodyBg").css("background-image", "url(../img/zhongchou-slidebg" + (_index + 1) + ".jpg)");
+                })
+            })()
+        })
+    </script>
+</body>
+
 
 </html>
