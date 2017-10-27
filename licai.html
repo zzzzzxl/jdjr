@@ -718,6 +718,20 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
     $(function() {
+        $(window).on("scroll", function() {
+            var scrTop = $(window).scrollTop();
+            if (scrTop > 200) {
+                if ($(".topBarFixed").length == 0) {
+                    $(".navMain").clone().addClass("topBarFixed").appendTo($("header"));
+                    navMainTab();
+                }
+                $(".sidep2").css("display", "block");
+            } else {
+                $(".topBarFixed").remove();
+                $(".sidep2").css("display", "none");
+            }
+        });
+
         function navMainTab() {
             $(".navMainBox").children("ul").children("li").children("a").hover(function() {
                 $(this).siblings(".pulldown").css("display", "block");

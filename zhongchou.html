@@ -1059,8 +1059,10 @@
                         $(".navMain").clone().addClass("topBarFixed").appendTo($("header"));
                         navMainTab();
                     }
+                    $(".sidep2").css("display", "block");
                 } else {
                     $(".topBarFixed").remove();
+                    $(".sidep2").css("display", "none");
                 }
             });
             (function() {
