@@ -905,8 +905,8 @@
         $(function() {
             $(".sidep2").on("click", function(event) {
                 event.preventDefault();
-                $("body").stop(true);
-                $("body").animate({
+                $("body,html").stop(true);
+                $("body,html").animate({
                     scrollTop: 0
                 }, 600);
             });
